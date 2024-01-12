@@ -112,7 +112,7 @@ int main() {
 
 **运行结果：**
 
-<img src="/Users/zhaozhiyu/Library/Application Support/typora-user-images/image-20240112103047034.png" alt="image-20240112103047034" style="zoom:50%;" />
+<img src="./pics/1.png" alt="1" style="zoom:50%;" />
 
 该测试用例说明贪心算法具有**正确性**，但是倘若增加交易次数限制呢？
 
@@ -150,7 +150,7 @@ vector<StockTrade> greedyStockTrade(const vector<int>& prices, int maxTrades) {
 
 **运行结果：**
 
-<img src="/Users/zhaozhiyu/Library/Application Support/typora-user-images/image-20240112104434059.png" alt="image-20240112104434059" style="zoom:50%;" />
+<img src="./pics/2.png" alt="2" style="zoom:50%;" />
 
 可以看到当设置交易限制的时候，结果就不正确了，对于该测试用例，正确的最大收益应该为30，在第4日买入，第5日卖出。
 
@@ -234,7 +234,7 @@ vector<StockTrade> DPStockTrade(const vector<int>& prices) {
 
 **运行结果：**
 
-<img src="/Users/zhaozhiyu/Library/Application Support/typora-user-images/image-20240112112222488.png" alt="image-20240112112222488" style="zoom:50%;" />
+<img src="./pics/3.png" alt="3" style="zoom:50%;" />
 
 该测试用例说明动态规划算法具有**正确性**。那么面对增加限制条件的情况呢？
 
@@ -256,7 +256,7 @@ vector<StockTrade> DPStockTrade(const vector<int>& prices, int maxTrades);
 
 运行效果：
 
-<img src="/Users/zhaozhiyu/Library/Application Support/typora-user-images/image-20240112115637932.png" alt="image-20240112115637932" style="zoom:50%;" />
+<img src="./pics/4.png" alt="4" style="zoom:50%;" />
 
 #### 手续费
 
@@ -286,7 +286,7 @@ dp[i][1] = max(dp[i - 1][1], dp[i - 1][0] - prices[i] - fee); // 考虑手续费
 
 运行效果：
 
-<img src="/Users/zhaozhiyu/Library/Application Support/typora-user-images/image-20240112120423753.png" alt="image-20240112120423753" style="zoom:50%;" />
+<img src="./pics/5.png" alt="5" style="zoom:50%;" />
 
 #### 冷冻期
 
@@ -305,7 +305,7 @@ dp[i][1] = max(dp[i - 1][1], prevDay - prices[i]);
 
 运行结果：
 
-<img src="/Users/zhaozhiyu/Library/Application Support/typora-user-images/image-20240112120913137.png" alt="image-20240112120913137" style="zoom:50%;" />
+<img src="./pics/6.png" alt="6" style="zoom:50%;" />
 
 #### 性能评估
 
@@ -346,7 +346,7 @@ vector<int> generateRandomStockPrices(int size, int minPrice, int maxPrice) {
 
 分别生成100、1000、10000长度序列，测试结果如下：
 
-<img src="/Users/zhaozhiyu/Library/Application Support/typora-user-images/image-20240112122537541.png" alt="image-20240112122537541" style="zoom:50%;" />
+<img src="./pics/7.png" alt="image-20240112122537541" style="zoom:50%;" />
 
 结果分析可知，由于限定交易次数，运行时间会出现数据量增大而减小的现象；此外分析可知该算法的时间复杂度为o(N)，只需遍历一遍输入序列，效率较高，可用于大量数据计算。
 
@@ -392,4 +392,4 @@ vector<int> generateRandomStockPrices(int size, int minPrice, int maxPrice) {
 
 最后，感谢这一学期张老师的教学指导，本人在算法层面获得了足够的训练、提升和进步，附图为本学期的`LeetCode`刷题情况：
 
-![image-20240112125540769](/Users/zhaozhiyu/Library/Application Support/typora-user-images/image-20240112125540769.png)
+![8](./pics/8.png)
